@@ -21,7 +21,7 @@ let topMovies = [
     },
     {
         Title: 'Star Wars Episode I – The Phantom Menace',
-        Director: 'Episode II – Attack of the Clones'
+        Director: 'George Lucas'
     },
     {
         Title: 'Star Wars Episode II – Attack of the Clones',
