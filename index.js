@@ -3,6 +3,9 @@ const express = require('express'),
       morgan = require('morgan');
 const app = express();
 
+//logs requests to terminal using morgan
+app.use(morgan('common'));
+
 //GET requests
 app.get('/', (req, res) => {
   res.send('May the force be with you!');
