@@ -81,6 +81,12 @@ app.get('/movies', (req, res) => {
   res.json(topMovies);
 });
 
+//gets info on one specific movie by title
+app.get('/movies/:Title', (req, res) => {
+  res.json(topMovies.find((movie) => { 
+    return movie.Title === req.params.Title }));
+});
+
 
 //handles errors
 app.use((err, req, res, next) => {
