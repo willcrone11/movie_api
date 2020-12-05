@@ -76,6 +76,7 @@ app.get('/', (req, res) => {
   res.send('Welcome to MyFlix!');
 });
 
+//gets list of all movies
 app.get('/movies', (req, res) => {
   res.json(topMovies);
 });
