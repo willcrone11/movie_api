@@ -92,6 +92,11 @@ app.get('/movies/Genres/:Title', (req, res) => {
   res.send('A successful GET request returning information on a genre by title');
 });
 
+//gets info on a director by name
+app.get('/movies/Directors/:Name', (req, res) => {
+  res.send('A successful GET request returning information on a director by name');
+});
+
 
 //handles errors
 app.use((err, req, res, next) => {
