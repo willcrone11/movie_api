@@ -81,7 +81,6 @@ app.get('/movies', (req, res) => {
   res.json(topMovies);
 });
 
-app.use(express.static('public'));
 
 //handles errors
 app.use((err, req, res, next) => {
