@@ -114,6 +114,11 @@ app.post('/users', (req, res) => {
   }
 });
 
+//Allow users to add a movie to their list of favorites
+app.post('/users/:Username/Movies/:MovieID', (req, res) => {
+    res.send('A successful PUT request updating a users list of favorites');
+});
+
 
 //handles errors
 app.use((err, req, res, next) => {
