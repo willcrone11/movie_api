@@ -13,6 +13,8 @@ app.use(express.static('public'));
 //logs requests to terminal using morgan
 app.use(morgan('common'));
 
+let users = [];
+
 let topMovies = [
     {
         Title: 'Star Star Wars Episode IV – A New Hope',
@@ -95,6 +97,21 @@ app.get('/movies/Genres/:Title', (req, res) => {
 //gets info on a director by name
 app.get('/movies/Directors/:Name', (req, res) => {
   res.send('A successful GET request returning information on a director by name');
+});
+
+//POST requests:
+//Allow new users to register
+app.post('/users', (req, res) => {
+  let newUser = req.body;
+
+  if (!newUser.Username) {
+    const message = 'Missing Username in request body';
+    res.status(400).send(message);
+  } else {
+  newUser.id = uuid.v4();
+  users.push(newUser);
+  res.status(201).send(newUser); 
+  }
 });
 
 
