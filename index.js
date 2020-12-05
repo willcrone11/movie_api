@@ -1,7 +1,14 @@
-//imports express and morgan modules
+//imports express, morgan, body parser, and uuid modules
 const express = require('express'), 
-      morgan = require('morgan');
+      morgan = require('morgan'),
+      bodyParser = require('body-parser'),
+      uuid = require('uuid');
+
 const app = express();
+
+app.use(bodyParser.json());
+
+app.use(express.static('public'));
 
 //logs requests to terminal using morgan
 app.use(morgan('common'));
