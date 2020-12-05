@@ -131,6 +131,10 @@ app.delete('/users/:Username/Movies/:MovieID', (req, res) => {
     res.send('A successful DELETE request removing a movie from users list of favorites');
 });
 
+//Allow existing users to deregister
+app.delete('/users/:Username', (req, res) => {
+    res.send('A successful DELETE request that deregisters the user');
+});
 
 //handles errors
 app.use((err, req, res, next) => {
