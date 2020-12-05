@@ -15,48 +15,59 @@ app.use(morgan('common'));
 
 let topMovies = [
     {
-        Title: 'Star Wars Episode IV – A New Hope',
-        Director: 'George Lucas'
+        Title: 'Star Star Wars Episode IV – A New Hope',
+        Director: 'George Lucas',
+        Genres: 'Science Fiction'
     },
     {
         Title: 'Star Wars Episode V – The Empire Strikes Back',
-        Director: 'Irvin Kershner'
+        Director: 'Irvin Kershner',
+        Genres: 'Science Fiction'
     },
     {
         Title: 'Star Wars Episode VI – Return of the Jedi',
-        Director: 'Richard Marquand'
+        Director: 'Richard Marquand',
+        Genres: 'Science Fiction'
     },
     {
         Title: 'Star Wars Episode I – The Phantom Menace',
-        Director: 'George Lucas'
+        Director: 'George Lucas',
+        Genres: 'Science Fiction'
     },
     {
         Title: 'Star Wars Episode II – Attack of the Clones',
-        Director: 'George Lucas'
+        Director: 'George Lucas',
+        Genres: 'Science Fiction'
     },
     {
         Title: 'Star Wars Episode III – Revenge of the Sith',
-        Director: 'George Lucas'
+        Director: 'George Lucas',
+        Genres: 'Science Fiction'
     },
     {
         Title: 'Star Wars Episode VII – The Force Awakens',
-        Director: 'J. J. Abrams'
+        Director: 'J. J. Abrams',
+        Genres: 'Science Fiction'
     },
     {
         Title: 'Star Wars Episode VIII – The Last Jedi',
-        Director: 'Rian Johnson'
+        Director: 'Rian Johnson',
+        Genres: 'Science Fiction'
     },
     {
         Title: 'Star Wars Episode IX – The Rise of Skywalker',
-        Director: 'J. J. Abrams'
+        Director: 'J. J. Abrams',
+        Genres: 'Science Fiction'
     },
     {
         Title: 'Rogue One',
-        Director: 'Gareth Edwards'
+        Director: 'Gareth Edwards',
+        Genres: 'Science Fiction'
     },
     {
         Title: 'Solo',
-        Director: 'Ron Howard'
+        Director: 'Ron Howard',
+        Genres: 'Science Fiction'
     }
 ];
 
