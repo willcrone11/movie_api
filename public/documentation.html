@@ -6,6 +6,119 @@
     <title>Movie API Documentation</title>
   </head>
   <body>
-    <p>This API holds information about different movies, directors, and genres so that users will be able to search for and learn about their favorite films.</p>
+    <header>
+      <h1>myFlix Project</h1>
+      <h2>Create a REST API with Node.js</h2>
+    </header>
+    <div>
+      <h3>Objective:</h3>
+        <p>To build the server-side component of a "movies" web application.</p>
+        <p>This API holds information about different movies, directors, and genres so that users will be able to search for and learn about their favorite films.</p>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>Business Logic</th>
+          <th>URL Endpoint</th>
+          <th>HTTP Method</th>
+          <th>Request Body</th>
+          <th>Request Example</th>
+          <th>Response Body</th>
+          <th>Response Example</th>
+        </tr>
+        <tr>
+          <td>Get a list of all movies</td>
+          <td>/movies</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>/movies</td>
+          <td>JSON Object containing data about all movies
+          <td>Example</td>
+        </tr>
+        <tr>
+          <td>Get information about one specific movie by title</td>
+          <td>/movies/:Title</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>/movies/Example
+          <td>JSON Object containing information about a single movie</td>
+          <td>Example</td>
+        </tr>
+        <tr>
+          <td>Return data about genre of a movie by its title</td>
+          <td>/movies/Genres/:Title</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>/movies/Genres/Example</td>
+          <td>JSON Object containing information about a genre of a movie</td>
+          <td>Example</td>
+        </tr>
+        <tr>
+          <td>Return data about a director by name</td>
+          <td>/movies/Directors/:Name</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>/movies/Directors/George%Lucas</td>
+          <td>JSON Object containing information about a director</td>
+          <td>Example</td>
+        </tr>
+        <tr>
+          <td>Allow new users to register</td>
+          <td>/users</td>
+          <td>POST</td>
+          <td>JSON Object containing information about a new user</td>
+          <td>{<br>
+            "Username": "will.crone11",<br>
+            "Password": "W3bDev123$",<br>
+            "Email": "will.crone11@gmail.com",<br>
+            "Date of Birth": "06/10/1998"<br>}
+          </td>
+          <td>JSON Object containing information about the added user, including an ID</td>
+          <td>{<br>
+            "Username": "will.crone11",<br>
+            "Password": "W3bDev123$",<br>
+            "Email": "will.crone11@gmail.com",<br>
+            "Date of Birth": "06/10/1998",<br>
+            "id": "0b5ac5d9-c235-40ff-9e0a-bdfd7e1709fb"<br>}
+          </td>
+        </tr>
+        <tr>
+          <td>Allow users to add a movie to their list of favorites</td>
+          <td>/users/:Username/Movies/:MovieID</td>
+          <td>POST</td>
+          <td>None</td>
+          <td>/users/will.crone11/Movies/5f8053202ba736251567996b</td>
+          <td>JSON Object containing data about a users favorite movies</td>
+          <td>Example</td>
+        </tr>
+        <tr>
+          <td>Allow users to update their user information</td>
+          <td>/users/:Username</td>
+          <td>PUT</td>
+          <td>JSON Object containing updated user information </td>
+          <td>{<br>"Username": "will.crone11",<br> "Password": "NewPassword123$",<br>"Email": "will.crone11@gmail.com",<br>"Date of Birth": "06/10/1998"<br>}</td>
+          <td>JSON Object reflecting updated user information</td>
+          <td>Example</td>
+        </tr>
+        <tr>
+          <td>Allow users to remove a movie from their list of favorites</td>
+          <td>/users/:Username/Movies/:MovieID</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>/users/will.crone11/Movies/5b6c88930</td>
+          <td>JSON Object reflecting updated user information</td>
+          <td>Example</td>
+        </tr>
+        <tr>
+          <td>Allow existing users to deregister</td>
+          <td>/users/:Username</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>/users/will.crone11</td>
+          <td>Message</td>
+          <td>"will.crone11 was successfully deregistered from myFlix."</td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>
