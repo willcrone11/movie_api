@@ -87,6 +87,11 @@ app.get('/movies/:Title', (req, res) => {
     return movie.Title === req.params.Title }));
 });
 
+//gets info on a genre by title
+app.get('/movies/Genres/:Title', (req, res) => {
+  res.send('A successful GET request returning information on a genre by title');
+});
+
 
 //handles errors
 app.use((err, req, res, next) => {
