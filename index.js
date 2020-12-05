@@ -73,7 +73,7 @@ let topMovies = [
 
 //GET requests
 app.get('/', (req, res) => {
-  res.send('May the force be with you!');
+  res.send('Welcome to MyFlix!');
 });
 
 app.get('/movies', (req, res) => {
