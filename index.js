@@ -17,7 +17,7 @@ let users = [];
 
 let topMovies = [
     {
-        Title: 'Star Star Wars Episode IV – A New Hope',
+        Title: 'Star Wars Episode IV - A New Hope',
         Director: 'George Lucas',
         Genres: 'Science Fiction'
     },
