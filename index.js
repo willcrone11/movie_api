@@ -15,65 +15,6 @@ app.use(express.static('public'));
 //logs requests to terminal using morgan
 app.use(morgan('common'));
 
-let users = [];
-
-let topMovies = [
-    {
-        Title: 'Star Wars Episode IV - A New Hope',
-        Director: 'George Lucas',
-        Genres: 'Science Fiction'
-    },
-    {
-        Title: 'Star Wars Episode V – The Empire Strikes Back',
-        Director: 'Irvin Kershner',
-        Genres: 'Science Fiction'
-    },
-    {
-        Title: 'Star Wars Episode VI – Return of the Jedi',
-        Director: 'Richard Marquand',
-        Genres: 'Science Fiction'
-    },
-    {
-        Title: 'Star Wars Episode I – The Phantom Menace',
-        Director: 'George Lucas',
-        Genres: 'Science Fiction'
-    },
-    {
-        Title: 'Star Wars Episode II – Attack of the Clones',
-        Director: 'George Lucas',
-        Genres: 'Science Fiction'
-    },
-    {
-        Title: 'Star Wars Episode III – Revenge of the Sith',
-        Director: 'George Lucas',
-        Genres: 'Science Fiction'
-    },
-    {
-        Title: 'Star Wars Episode VII – The Force Awakens',
-        Director: 'J. J. Abrams',
-        Genres: 'Science Fiction'
-    },
-    {
-        Title: 'Star Wars Episode VIII – The Last Jedi',
-        Director: 'Rian Johnson',
-        Genres: 'Science Fiction'
-    },
-    {
-        Title: 'Star Wars Episode IX – The Rise of Skywalker',
-        Director: 'J. J. Abrams',
-        Genres: 'Science Fiction'
-    },
-    {
-        Title: 'Rogue One',
-        Director: 'Gareth Edwards',
-        Genres: 'Science Fiction'
-    },
-    {
-        Title: 'Solo',
-        Director: 'Ron Howard',
-        Genres: 'Science Fiction'
-    }
-];
 
 //GET requests
 app.get('/', (req, res) => {
