@@ -124,7 +124,23 @@ app.post('/users/:Username/Movies/:MovieID', (req, res) => {
 //PUT requests
 //Allow users to update their user information
 app.put('/users/:Username', (req, res) => {
-    res.send('A successful PUT request updating user information');
+  Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
+    {
+      Username: req.body.Username,
+      Password: req.body.Password,
+      Email: req.body.Email,
+      Birthday: req.body.Birthday
+    }
+  },
+  { new: true }, // This line makes sure that the updated document is returned
+  (err, updatedUser) => {
+    if(err) {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    } else {
+      res.json(updatedUser);
+    }
+  });
 });
 
 //DELETE requests
