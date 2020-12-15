@@ -12,6 +12,14 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
+//refers to Movies and User models from db collections
+const Movies = Models.Movie;
+const Users = Models.User;
+
+//connects mongoose to myFlix db
+mongoose.connect('mongodb://localhost:27017/test',
+{ useNewUrlParser: true, useUnifiedTopology: true });
+
 //logs requests to terminal using morgan
 app.use(morgan('common'));
 
