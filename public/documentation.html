@@ -44,7 +44,7 @@
           <td>/movies/:Title</td>
           <td>GET</td>
           <td>None</td>
-          <td>/movies/Rogue%20One
+          <td>/movies/Rogue-One
           <td>JSON Object containing information about a single movie</td>
           <td>{<br>
             "Title": "Rogue One",<br>
@@ -57,9 +57,12 @@
           <td>/movies/Genres/:Title</td>
           <td>GET</td>
           <td>None</td>
-          <td>/movies/Genres/Example</td>
+          <td>/movies/Genres/Rogue-One</td>
           <td>JSON Object containing information about a genre of a movie</td>
-          <td>Example</td>
+          <td>{<br>
+            "Name": "Science-Fiction",<br>
+            "Description": "Science-Fiction is a genre of speculative fiction that contains imagined elements that don't exist in the real world. Science-Fiction spans a wide range of themes that often explore time travel, space travel, are set in the future, and deal with the consequences of technological advances."<br>
+        }</td>
         </tr>
         <tr>
           <td>Return data about a director by name</td>
@@ -68,7 +71,12 @@
           <td>None</td>
           <td>/movies/Directors/George%Lucas</td>
           <td>JSON Object containing information about a director</td>
-          <td>Example</td>
+          <td>{<br>
+            "Name": "George Lucas",<br>
+            "Bio": "George Walton Lucas, Jr. (Modesto, California, May 14, 1944) is an American filmmaker, creator of the film sagas of Star Wars and Indiana Jones, and former president of Lucasfilm Limited, LucasArts Entertainment Company, Lucas Digital Ltd, Lucas Licensing, LucasBooks and Lucas Learning Ltd. It was considered, for two consecutive years, the fourth most powerful person in the entertainment industry, behind the owners of Time Warner, Turner and Steven Spielberg. (from IMDb)",<br>
+            "Birth": "1944-05-14",<br>
+            "Death": "N/A"<br>
+        }</td>
         </tr>
         <tr>
           <td>Allow new users to register</td>
@@ -79,15 +87,18 @@
             "Username": "will.crone11",<br>
             "Password": "W3bDev123$",<br>
             "Email": "will.crone11@gmail.com",<br>
-            "Date of Birth": "06/10/1998"<br>}
+            "Birthday": "06/10/1998"<br>}
           </td>
           <td>JSON Object containing information about the added user, including an ID</td>
           <td>{<br>
+            "FavoriteMovies": [],<br>
+            "_id": "5fd91093fe42b10f06f33880",<br>
             "Username": "will.crone11",<br>
             "Password": "W3bDev123$",<br>
             "Email": "will.crone11@gmail.com",<br>
-            "Date of Birth": "06/10/1998",<br>
-            "id": "0b5ac5d9-c235-40ff-9e0a-bdfd7e1709fb"<br>}
+            "Birthday": "1998-06-10T04:00:00.000Z",<br>
+            "__v": 0<br>
+        }
           </td>
         </tr>
         <tr>
@@ -95,36 +106,67 @@
           <td>/users/:Username/Movies/:MovieID</td>
           <td>POST</td>
           <td>None</td>
-          <td>/users/will.crone11/Movies/5f8053202ba736251567996b</td>
+          <td>/users/will.crone11/Movies/5fd51f936405fa0c2b9b2911</td>
           <td>JSON Object containing data about a users favorite movies</td>
-          <td>Example</td>
+          <td>{<br>
+            "FavoriteMovies": [<br>
+                "5fd51f936405fa0c2b9b2911"<br>
+            ],<br>
+            "_id": "5fd91093fe42b10f06f33880",<br>
+            "Username": "will.crone11",<br>
+            "Password": "NewPassword123",<br>
+            "Email": "will.crone11@gmail.com",<br>
+            "Birthday": "1998-06-10T04:00:00.000Z",<br>
+            "__v": 0<br>
+        }</td>
         </tr>
         <tr>
           <td>Allow users to update their user information</td>
           <td>/users/:Username</td>
           <td>PUT</td>
           <td>JSON Object containing updated user information </td>
-          <td>{<br>"Username": "will.crone11",<br> "Password": "NewPassword123$",<br>"Email": "will.crone11@gmail.com",<br>"Date of Birth": "06/10/1998"<br>}</td>
+          <td>{<br>
+            "Username": "will.crone11",<br>
+            "Password": "NewPassword123",<br>
+            "Email": "will.crone11@gmail.com",<br>
+            "Date of Birth": "06/10/1998"<br>
+          }</td>
           <td>JSON Object reflecting updated user information</td>
-          <td>Example</td>
+          <td>{<br>
+            "FavoriteMovies": [],<br>
+            "_id": "5fd91093fe42b10f06f33880",<br>
+            "Username": "will.crone11",<br>
+            "Password": "NewPassword123",<br>
+            "Email": "will.crone11@gmail.com",<br>
+            "Birthday": "1998-06-10T04:00:00.000Z",<br>
+            "__v": 0<br>
+        }</td>
         </tr>
         <tr>
           <td>Allow users to remove a movie from their list of favorites</td>
           <td>/users/:Username/Movies/:MovieID</td>
           <td>DELETE</td>
           <td>None</td>
-          <td>/users/will.crone11/Movies/5b6c88930</td>
+          <td>/users/will.crone11/Movies/5fd51f936405fa0c2b9b2911</td>
           <td>JSON Object reflecting updated user information</td>
-          <td>Example</td>
+          <td>{<br>
+            "FavoriteMovies": [],<br>
+            "_id": "5fd91093fe42b10f06f33880",<br>
+            "Username": "will.crone11",<br>
+            "Password": "NewPassword123",<br>
+            "Email": "will.crone11@gmail.com",<br>
+            "Birthday": "1998-06-10T04:00:00.000Z",<br>
+            "__v": 0<br>
+        }</td>
         </tr>
         <tr>
-          <td>Allow existing users to deregister</td>
+          <td>Deletes a user by username</td>
           <td>/users/:Username</td>
           <td>DELETE</td>
           <td>None</td>
           <td>/users/will.crone11</td>
           <td>Message</td>
-          <td>"will.crone11 was successfully deregistered from myFlix."</td>
+          <td>"will.crone11 was deleted."</td>
         </tr>
       </table>
     </div>
