@@ -33,6 +33,15 @@ app.get('/', (req, res) => {
 app.get('/movies', (req, res) => {
   res.json(topMovies);
 });
+    Movies.find()
+      .then((movies) => {
+        res.status(201).json(movies);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      });
+  });
 
 //gets info on one specific movie by title
 app.get('/movies/:Title', (req, res) => {
