@@ -161,9 +161,20 @@ app.delete('/users/:Username/Movies/:MovieID', (req, res) => {
    });
  });
 
-//Allow existing users to deregister
+//deletes a user by username
 app.delete('/users/:Username', (req, res) => {
-    res.send('A successful DELETE request that deregisters the user');
+  Users.findOneAndRemove({ Username: req.params.Username })
+    .then((user) => {
+      if (!user) {
+        res.status(400).send(req.params.Username + ' was not found');
+      } else {
+        res.status(200).send(req.params.Username + ' was deleted.');
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
 });
 
 //handles errors
