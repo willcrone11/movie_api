@@ -43,8 +43,14 @@ app.get('/movies', (req, res) => {
 
 //gets info on one specific movie by title
 app.get('/movies/:Title', (req, res) => {
-  res.json(topMovies.find((movie) => { 
-    return movie.Title === req.params.Title }));
+  Movies.findOne({ Title: req.params.Title })
+    .then((movie) => {
+      res.json(movie);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
 });
 
 //gets info on a genre by title
