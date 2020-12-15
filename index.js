@@ -31,8 +31,6 @@ app.get('/', (req, res) => {
 
 //gets list of all movies
 app.get('/movies', (req, res) => {
-  res.json(topMovies);
-});
     Movies.find()
       .then((movies) => {
         res.status(201).json(movies);
