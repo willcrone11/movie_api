@@ -1,9 +1,7 @@
-//imports express, morgan, body parser, and uuid modules
 //imports express, morgan, body parser, uuid, mongoose, and Models modules
 const express = require('express'), 
       morgan = require('morgan'),
       bodyParser = require('body-parser'),
-      uuid = require('uuid');
       uuid = require('uuid'),
       mongoose = require('mongoose'),
       Models = require('./models.js');
