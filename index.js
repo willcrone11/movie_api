@@ -146,8 +146,20 @@ app.put('/users/:Username', (req, res) => {
 //DELETE requests
 //Allow users to remove a movie from their list of favorites
 app.delete('/users/:Username/Movies/:MovieID', (req, res) => {
-    res.send('A successful DELETE request removing a movie from users list of favorites');
-});
+  Users.findOneAndUpdate(
+      { Username: req.params.Username},
+      { $pull: { FavoriteMovies: req.params.MovieID}
+    },
+    {new: true},
+     (err, updatedUser) => {
+      if(err) {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+     } else {
+       res.json(updatedUser);
+     }
+   });
+ });
 
 //Allow existing users to deregister
 app.delete('/users/:Username', (req, res) => {
