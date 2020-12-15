@@ -107,7 +107,18 @@ app.post('/users', (req, res) => {
 
 //Allow users to add a movie to their list of favorites
 app.post('/users/:Username/Movies/:MovieID', (req, res) => {
-    res.send('A successful PUT request updating a users list of favorites');
+  Users.findOneAndUpdate({ Username: req.params.Username }, {
+     $push: { FavoriteMovies: req.params.MovieID }
+   },
+   { new: true }, // This line makes sure that the updated document is returned
+  (err, updatedUser) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    } else {
+      res.json(updatedUser);
+    }
+  });
 });
 
 //PUT requests
