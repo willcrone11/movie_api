@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-//refers to Movies and User models from db collections
+//imports Movie and User models from db collections
 const Movies = Models.Movie;
 const Users = Models.User;
 
@@ -108,8 +108,8 @@ app.post('/users', (req, res) => {
 //Allow users to add a movie to their list of favorites
 app.post('/users/:Username/Movies/:MovieID', (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username }, {
-     $push: { FavoriteMovies: req.params.MovieID }
-   },
+    $push: { FavoriteMovies: req.params.MovieID }
+  },
    { new: true }, // This line makes sure that the updated document is returned
   (err, updatedUser) => {
     if (err) {
@@ -151,15 +151,15 @@ app.delete('/users/:Username/Movies/:MovieID', (req, res) => {
       { $pull: { FavoriteMovies: req.params.MovieID}
     },
     {new: true},
-     (err, updatedUser) => {
-      if(err) {
-        console.error(err);
-        res.status(500).send('Error: ' + err);
-     } else {
-       res.json(updatedUser);
-     }
-   });
- });
+      (err, updatedUser) => {
+        if(err) {
+          console.error(err);
+          res.status(500).send('Error: ' + err);
+        } else {
+          res.json(updatedUser);
+        }
+      });
+});
 
 //deletes a user by username
 app.delete('/users/:Username', (req, res) => {
