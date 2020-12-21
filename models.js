@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+//used to hash passwords
+const bcrypt = require('bcrypt');
+
 //movies collection schema
 let movieSchema = mongoose.Schema({
   Title: {type: String, required: true},

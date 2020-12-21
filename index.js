@@ -1,17 +1,24 @@
-//imports express, morgan, body parser, uuid, mongoose, Models, and passport modules
+//imports express, morgan, body parser, uuid, mongoose, Models, passport, and cors modules
 const express = require('express'), 
       morgan = require('morgan'),
       bodyParser = require('body-parser'),
       uuid = require('uuid'),
       mongoose = require('mongoose'),
       Models = require('./models.js'),
-      passport = require('passport');
+      passport = require('passport'),
+      cors = require('cors');
 
 require('./passport');
+
+//imports express-validator module for server-side validation
+const { check, validationResult } = require('express-validator');
 
 const app = express();
 
 app.use(bodyParser.json());
+
+//controls which domains can access application
+app.use(cors());
 
 let auth = require('./auth')(app);//must be after bodyParser function
 
