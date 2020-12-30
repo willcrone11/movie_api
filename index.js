@@ -29,8 +29,14 @@ const Movies = Models.Movie;
 const Users = Models.User;
 
 //connects mongoose to myFlix db
+/*local host 
 mongoose.connect('mongodb://localhost:27017/test',
+{ useNewUrlParser: true, useUnifiedTopology: true });*/
+
+//mongodb atlas
+mongoose.connect( process.env.CONNECTION_URI,
 { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 //logs requests to terminal using morgan
 app.use(morgan('common'));
