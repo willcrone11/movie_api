@@ -6,7 +6,7 @@ myFlixDB server-side web application, built with MongoDB and hosted on Heroku.
 View package.json/package-lock.json for all dependant packages
 
 ## Documentation 
-Check out to see all endpoints, expected data inputs, etc.
+Check out to see all endpoints see public/documentation.html file.
 
 ## Scripts
 ### 'node index.js'
